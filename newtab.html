@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InspoTab</title>
+  <link rel="stylesheet" href="newtab.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="background"></div>
+  <button id="hamburger" aria-label="Open settings">&#9776;</button>
+  <div class="center-container">
+    <div id="greeting"></div>
+    <div id="quote-container">
+      <div id="quote"></div>
+      <button id="copyQuote" aria-label="Copy quote" title="Copy quote to clipboard">
+        <i class="fa-solid fa-copy"></i>
+      </button>
+    </div>
+
+  </div>
+  <button id="keyboardHint" class="keyboard-hint" aria-label="Keyboard shortcuts">⌨️</button>
+  
+  <!-- Settings Backdrop -->
+  <div id="settingsBackdrop" class="settings-backdrop"></div>
+  
+  <div id="settingsPanel" class="settings-panel">
+    <div class="settings-header">
+      <span>Settings</span>
+      <button id="closeSettings" aria-label="Close settings">&times;</button>
+    </div>
+    <div class="settings-content">
+      <!-- Personalization Section -->
+      <div class="settings-section">
+        <div class="section-header" data-section="personalization">
+          <i class="fa-solid fa-user"></i>
+          <span>Personalization</span>
+          <i class="fa-solid fa-chevron-down section-icon"></i>
+        </div>
+        <div class="section-content" id="personalization-content">
+          <label for="nameInput">Your Name:</label>
+          <input type="text" id="nameInput" placeholder="Enter your name..." />
+          <label for="fontSelect">Font Style:</label>
+          <select id="fontSelect">
+            <option value="sans-serif">Sans-serif</option>
+            <option value="serif">Serif</option>
+            <option value="handwriting">Handwriting</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Theme Section -->
+      <div class="settings-section">
+        <div class="section-header" data-section="theme">
+          <i class="fa-solid fa-palette"></i>
+          <span>Theme</span>
+          <i class="fa-solid fa-chevron-down section-icon"></i>
+        </div>
+        <div class="section-content" id="theme-content">
+          <label for="themeSelect">Theme:</label>
+          <select id="themeSelect">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Keyboard Shortcuts Section -->
+      <div class="settings-section">
+        <div class="section-header" data-section="keyboard">
+          <i class="fa-solid fa-keyboard"></i>
+          <span>Keyboard Shortcuts</span>
+          <i class="fa-solid fa-chevron-down section-icon"></i>
+        </div>
+        <div class="section-content" id="keyboard-content">
+          <div class="keyboard-section">
+            <label class="checkbox-label">
+              <input type="checkbox" id="keyboardShortcutsEnabled" />
+              <span class="checkmark"></span>
+              Enable keyboard shortcuts
+            </label>
+            <small>Keyboard shortcuts allow quick navigation (R for new quote, S for settings, etc.)</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Section -->
+      <div class="settings-section">
+        <div class="section-header" data-section="background">
+          <i class="fa-solid fa-image"></i>
+          <span>Background</span>
+          <i class="fa-solid fa-chevron-down section-icon"></i>
+        </div>
+        <div class="section-content" id="background-content">
+          <div class="background-section">
+            <label for="customBackground">Custom Background:</label>
+            <div class="file-input-container">
+              <input type="file" id="customBackground" accept="image/*" />
+              <div class="file-input-button" id="fileInputButton">Choose File</div>
+            </div>
+            <button id="removeCustomBg">Remove Custom Background</button>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Info Section -->
+      <div class="settings-section">
+        <div class="section-header" data-section="info">
+          <i class="fa-solid fa-info-circle"></i>
+          <span>Information</span>
+          <i class="fa-solid fa-chevron-down section-icon"></i>
+        </div>
+        <div class="section-content" id="info-content">
+          <div class="button-group">
+            <button id="aboutBtn">About</button>
+            <button id="changelogBtn">Changelog</button>
+          </div>
+        </div>
+      </div>
+
+      <button id="saveSettings">Save Settings</button>
+      <button id="resetFont" class="reset-button">Reset to Default</button>
+    </div>
+  </div>
+  
+  <!-- About Modal Overlay -->
+  <div id="aboutOverlay" class="about-overlay">
+    <div class="about-modal">
+      <div class="about-header">
+        <h2>About InspoTab</h2>
+        <button id="closeAbout" aria-label="Close about">&times;</button>
+      </div>
+      <div class="about-content">
+        <p>InspoTab is a Chrome extension that replaces your new tab page with daily motivational quotes and beautiful backgrounds.</p>
+        <p>Every time you open a new tab, you'll see a random inspirational quote to keep you motivated throughout your day.</p>
+        <div class="about-creator">
+          <p><strong>Created by:</strong> Samuel Snow</p>
+          <p><strong>Website:</strong> <a href="https://inspo.samuelesnow.co/" target="_blank">inspo.samuelesnow.co</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Changelog Modal Overlay -->
+  <div id="changelogOverlay" class="about-overlay">
+    <div class="about-modal">
+      <div class="about-header">
+        <h2>Changelog</h2>
+        <button id="closeChangelog" aria-label="Close changelog">&times;</button>
+      </div>
+      <div class="about-content">
+        <div class="version-info">
+          <p><strong>Current Version:</strong> 1.2.0</p>
+          <p><strong>Last Updated:</strong> July 13, 2025</p>
+        </div>
+        <div class="changelog-content">
+          <div class="version-entry">
+            <h3>Version 1.2.0</h3>
+            <span class="version-date">July 13, 2025</span>
+            <ul>
+              <li>Option to disable keyboard shortcuts for users who prefer mouse navigation</li>
+              <li>About and changelog pages accessible from settings</li>
+              <li>Enhanced OAuth flow with proper client ID configuration</li>
+              <li>Removed quote favoriting feature to simplify the interface</li>
+              <li>Removed font color customization to streamline settings</li>
+              <li>Various UI improvements and bug fixes</li>
+            </ul>
+          </div>
+          
+          <div class="version-entry">
+            <h3>Version 1.0.0</h3>
+            <span class="version-date">July 13, 2025</span>
+            <ul>
+              <li>Initial release of InspoTab</li>
+              <li>Daily inspirational quotes with beautiful backgrounds</li>
+              <li>Customizable themes (light/dark mode)</li>
+              <li>Font style options (sans-serif, serif, handwriting)</li>
+              <li>Custom background upload feature</li>
+              <li>Personalized greetings with user's name</li>
+              <li>Copy quote to clipboard functionality</li>
+              <li>Keyboard shortcuts for quick navigation</li>
+              <li>Minimal mode toggle</li>
+              <li>Responsive design for all screen sizes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="quotes.js"></script>
+  <script src="newtab.js"></script>
+</body>
+</html> 
