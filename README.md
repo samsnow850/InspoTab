@@ -32,7 +32,7 @@ A beautiful Chrome extension that transforms your new tab page into an inspiring
 - **Settings**: Click the hamburger menu (☰) to access settings
 
 ### Settings Panel
-Access settings by clicking the hamburger menu (☰) in the top left:
+Access settings by clicking the hamburger menu (☰) in the top right:
 
 #### Personalization
 - Set your name for personalized greetings
