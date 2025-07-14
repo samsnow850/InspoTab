@@ -118,6 +118,7 @@
             <button id="aboutBtn">About</button>
             <button id="changelogBtn">Changelog</button>
           </div>
+          <button id="supportBtn" class="support-button">Support</button>
         </div>
       </div>
 
@@ -134,11 +135,35 @@
         <button id="closeAbout" aria-label="Close about">&times;</button>
       </div>
       <div class="about-content">
-        <p>InspoTab is a Chrome extension that replaces your new tab page with daily motivational quotes and beautiful backgrounds.</p>
+        <p>InspoTab is a Chrome extension that transforms your new tab page into an inspiring experience with daily motivational quotes and stunning backgrounds.</p>
         <p>Every time you open a new tab, you'll see a random inspirational quote to keep you motivated throughout your day.</p>
+        
+        <div class="about-links">
+          <h3>🔗 Links</h3>
+          <div class="link-grid">
+            <a href="https://chromewebstore.google.com/detail/ckpplcfeemkpdkkaehicgkcfflmjlhbf?utm_source=item-share-cb" target="_blank" class="link-card">
+              <i class="fa-solid fa-download"></i>
+              <span>Chrome Web Store</span>
+            </a>
+            <a href="https://github.com/samsnow850/InspoTab" target="_blank" class="link-card">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub Repository</span>
+            </a>
+            <a href="https://inspo.samuelesnow.co/" target="_blank" class="link-card">
+              <i class="fa-solid fa-globe"></i>
+              <span>InspoTab Website</span>
+            </a>
+            <a href="https://samuelesnow.co/" target="_blank" class="link-card">
+              <i class="fa-solid fa-user"></i>
+              <span>Personal Website</span>
+            </a>
+          </div>
+        </div>
+        
         <div class="about-creator">
+          <h3>👨‍💻 Creator</h3>
           <p><strong>Created by:</strong> Samuel Snow</p>
-          <p><strong>Website:</strong> <a href="https://inspo.samuelesnow.co/" target="_blank">inspo.samuelesnow.co</a></p>
+          <p><strong>Version:</strong> 1.2.0</p>
         </div>
       </div>
     </div>
@@ -158,38 +183,121 @@
         </div>
         <div class="changelog-content">
           <div class="version-entry">
-            <h3>Version 1.2.0</h3>
-            <span class="version-date">July 13, 2025</span>
-            <ul>
-              <li>Option to disable keyboard shortcuts for users who prefer mouse navigation</li>
-              <li>About and changelog pages accessible from settings</li>
-              <li>Enhanced OAuth flow with proper client ID configuration</li>
-              <li>Removed quote favoriting feature to simplify the interface</li>
-              <li>Removed font color customization to streamline settings</li>
-              <li>Various UI improvements and bug fixes</li>
-            </ul>
+            <h3>Version 1.2.0 (Latest)</h3>
+            <span class="version-date">Latest Update</span>
+            
+            <div class="changelog-section">
+              <h4>✨ Copy Quotes Easily</h4>
+              <ul>
+                <li>Added a copy button that appears when you hover over a quote—grab your inspiration with one click</li>
+              </ul>
+            </div>
+            
+            <div class="changelog-section">
+              <h4>🖼️ Custom Background Support</h4>
+              <ul>
+                <li>You can now upload your own background image to personalize your new tab even more</li>
+              </ul>
+            </div>
+            
+            <div class="changelog-section">
+              <h4>🕶️ Overlay Improvements</h4>
+              <ul>
+                <li>Click anywhere outside of an overlay to close it—no need to hunt for the ❌ or hit Esc</li>
+                <li>Overlays now have a subtle background blur to help you focus on the content</li>
+              </ul>
+            </div>
+            
+            <div class="changelog-section">
+              <h4>💬 New Motivational Quotes</h4>
+              <ul>
+                <li>Added 100+ new quotes to keep the daily inspiration fresh and powerful</li>
+              </ul>
+            </div>
+            
+            <div class="changelog-section">
+              <h4>⚙️ Settings Enhancements</h4>
+              <ul>
+                <li>Added the ability to turn on and off keyboard shortcuts</li>
+                <li>Updated the settings overlay to have collapsible sections</li>
+                <li>Fixed an issue where the new settings was getting cut off based on screen size</li>
+              </ul>
+            </div>
+            
+            <div class="changelog-section">
+              <h4>🧹 Interface Cleanup</h4>
+              <ul>
+                <li>Removed quote favoriting features and hearts to simplify the interface</li>
+                <li>Streamlined the user experience for better focus on inspiration</li>
+              </ul>
+            </div>
           </div>
           
           <div class="version-entry">
             <h3>Version 1.0.0</h3>
-            <span class="version-date">July 13, 2025</span>
-            <ul>
-              <li>Initial release of InspoTab</li>
-              <li>Daily inspirational quotes with beautiful backgrounds</li>
-              <li>Customizable themes (light/dark mode)</li>
-              <li>Font style options (sans-serif, serif, handwriting)</li>
-              <li>Custom background upload feature</li>
-              <li>Personalized greetings with user's name</li>
-              <li>Copy quote to clipboard functionality</li>
-              <li>Keyboard shortcuts for quick navigation</li>
-              <li>Minimal mode toggle</li>
-              <li>Responsive design for all screen sizes</li>
-            </ul>
+            <span class="version-date">Initial Release</span>
+            <div class="changelog-section">
+              <h4>🎯 Initial Release</h4>
+              <ul>
+                <li>Daily inspirational quotes with beautiful backgrounds</li>
+                <li>Customizable themes (light/dark mode)</li>
+                <li>Font style options (sans-serif, serif, handwriting)</li>
+                <li>Personalized greetings with user's name</li>
+                <li>Keyboard shortcuts for quick navigation</li>
+                <li>Minimal mode toggle</li>
+                <li>Responsive design for all screen sizes</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
+  <!-- Support Modal Overlay -->
+  <div id="supportOverlay" class="about-overlay">
+    <div class="about-modal">
+      <div class="about-header">
+        <h2>Support & Feedback</h2>
+        <button id="closeSupport" aria-label="Close support">&times;</button>
+      </div>
+      <div class="about-content">
+        <div class="support-section">
+          <h3>🐛 Report a Bug</h3>
+          <p>Found a bug? Let us know here so we can fix it quickly.</p>
+          <a href="https://github.com/samsnow850/InspoTab/issues" target="_blank" class="support-link">
+            <i class="fa-solid fa-bug"></i>
+            <span>Report Bug on GitHub</span>
+          </a>
+        </div>
+        
+        <div class="support-section">
+          <h3>💡 Request a Feature</h3>
+          <p>Have an idea for a new feature? Share it with us and the community.</p>
+          <a href="https://github.com/samsnow850/InspoTab/discussions" target="_blank" class="support-link">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Request Feature</span>
+          </a>
+        </div>
+        
+        <div class="support-section">
+          <h3>📧 Email Support</h3>
+          <p>Prefer email? Reach out anytime at samsnowsf@gmail.com</p>
+          <div class="email-section">
+            <code class="email-address">samsnowsf@gmail.com</code>
+            <button id="copyEmail" class="copy-email-btn" title="Copy email to clipboard">
+              <i class="fa-solid fa-copy"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="support-note">
+          <p><strong>Privacy Note:</strong> Any information you share will be handled respectfully and securely. We value your privacy and feedback!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <script src="quotes.js"></script>
   <script src="newtab.js"></script>
 </body>

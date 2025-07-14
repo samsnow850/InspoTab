@@ -90,22 +90,35 @@ If you encounter any issues or have suggestions:
 
 ## 🔄 Changelog
 
-### Version 1.2.0 (July 13, 2025)
-- Option to disable keyboard shortcuts
-- About and changelog pages accessible from settings
-- Enhanced OAuth flow with proper client ID configuration
-- Removed quote favoriting feature to simplify the interface
-- Removed font color customization to streamline settings
-- Various UI improvements and bug fixes
+### Version 1.2.0 (Latest)
+**✨ Copy Quotes Easily**
+- Added a copy button that appears when you hover over a quote—grab your inspiration with one click
 
-### Version 1.0.0 (July 13, 2025)
-- Initial release of InspoTab
+**🖼️ Custom Background Support**
+- You can now upload your own background image to personalize your new tab even more
+
+**🕶️ Overlay Improvements**
+- Click anywhere outside of an overlay to close it—no need to hunt for the ❌ or hit Esc
+- Overlays now have a subtle background blur to help you focus on the content
+
+**💬 New Motivational Quotes**
+- Added 100+ new quotes to keep the daily inspiration fresh and powerful
+
+**⚙️ Settings Enhancements**
+- Added the ability to turn on and off keyboard shortcuts
+- Updated the settings overlay to have collapsible sections
+- Fixed an issue where the new settings was getting cut off based on screen size
+
+**🧹 Interface Cleanup**
+- Removed quote favoriting features and hearts to simplify the interface
+- Streamlined the user experience for better focus on inspiration
+
+### Version 1.0.0
+**🎯 Initial Release**
 - Daily inspirational quotes with beautiful backgrounds
 - Customizable themes (light/dark mode)
 - Font style options (sans-serif, serif, handwriting)
-- Custom background upload feature
 - Personalized greetings with user's name
-- Copy quote to clipboard functionality
 - Keyboard shortcuts for quick navigation
 - Minimal mode toggle
 - Responsive design for all screen sizes

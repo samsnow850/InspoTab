@@ -505,6 +505,24 @@ body.font-handwriting {
   background: #e9ecef;
 }
 
+.support-button {
+  background: #6c757d;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s;
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.support-button:hover {
+  background: #5a6268;
+}
+
 /* About Modal Overlay */
 .about-overlay {
   position: fixed;
@@ -533,6 +551,25 @@ body.font-handwriting {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Dark scrollbar for about modal */
+.about-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.about-modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.about-modal::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.about-modal::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .about-header {
   display: flex;
   justify-content: space-between;
@@ -547,13 +584,21 @@ body.font-handwriting {
   font-weight: 600;
 }
 
-#closeAbout {
+#closeAbout, #closeSupport, #closeChangelog {
   background: none;
   border: none;
   font-size: 2rem;
   cursor: pointer;
   color: #888;
   line-height: 1;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+#closeAbout:hover, #closeSupport:hover, #closeChangelog:hover {
+  color: #333;
 }
 
 .about-content {
@@ -563,6 +608,64 @@ body.font-handwriting {
 .about-content p {
   margin: 0 0 1rem 0;
   line-height: 1.6;
+}
+
+.about-content h3 {
+  margin: 1.5rem 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #0078d4;
+  padding-bottom: 0.5rem;
+}
+
+.about-links {
+  margin: 1.5rem 0;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #495057;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+  color: white;
+  border-color: #0078d4;
+}
+
+.link-card i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #0078d4;
+  transition: color 0.3s ease;
+}
+
+.link-card:hover i {
+  color: white;
+}
+
+.link-card span {
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .about-creator {
@@ -809,6 +912,188 @@ body.dark-theme .about-content a {
   color: #4fc3f7;
 }
 
+/* Dark theme scrollbar */
+body.dark-theme .about-modal::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+body.dark-theme .about-modal::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+body.dark-theme .about-modal::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+body.dark-theme #closeAbout:hover, 
+body.dark-theme #closeSupport:hover, 
+body.dark-theme #closeChangelog:hover {
+  color: #fff;
+}
+
+body.dark-theme .about-content h3 {
+  color: #fff;
+  border-bottom-color: #0078d4;
+}
+
+body.dark-theme .link-card {
+  background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
+  border-color: #444;
+  color: #e9ecef;
+}
+
+body.dark-theme .link-card:hover {
+  background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+  border-color: #0078d4;
+  color: white;
+}
+
+body.dark-theme .link-card i {
+  color: #0078d4;
+}
+
+body.dark-theme .link-card:hover i {
+  color: white;
+}
+
+/* Dark theme for support sections */
+body.dark-theme .support-section {
+  background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
+  border-left-color: #6c757d;
+}
+
+body.dark-theme .support-section h3 {
+  color: #fff;
+}
+
+body.dark-theme .support-section p {
+  color: #ccc;
+}
+
+body.dark-theme .email-address {
+  background: #444;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark-theme .support-note {
+  background: #2d2d2d;
+  border-color: #444;
+  border-left-color: #ffc107;
+}
+
+body.dark-theme .support-note p {
+  color: #ffc107;
+}
+
+/* Support Section Styles */
+.support-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  border-left: 4px solid #6c757d;
+}
+
+.support-section:last-child {
+  margin-bottom: 0;
+}
+
+.support-section h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.support-section p {
+  margin: 0 0 1rem 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.support-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #6c757d;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.support-link:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.support-link i {
+  font-size: 1.1rem;
+}
+
+.email-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.email-address {
+  background: #f8f9fa;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #333;
+  border: 1px solid #dee2e6;
+  flex: 1;
+}
+
+.copy-email-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-email-btn:hover {
+  background: #5a6268;
+}
+
+.copy-email-btn.copied {
+  background: #28a745;
+}
+
+.support-note {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  border-left: 4px solid #ffc107;
+}
+
+.support-note p {
+  margin: 0;
+  color: #856404;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 body.dark-theme .version-info {
   border-bottom: 1px solid #444;
 }
@@ -826,6 +1111,55 @@ body.dark-theme .version-date {
 }
 
 body.dark-theme .changelog-content li {
+  color: #ddd;
+}
+
+/* New Changelog Section Styles */
+.changelog-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #0078d4;
+}
+
+.changelog-section:last-child {
+  margin-bottom: 0;
+}
+
+.changelog-section h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.changelog-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.changelog-section li {
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Dark theme for changelog sections */
+body.dark-theme .changelog-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-left-color: #0078d4;
+}
+
+body.dark-theme .changelog-section h4 {
+  color: #fff;
+}
+
+body.dark-theme .changelog-section li {
   color: #ddd;
 }
 

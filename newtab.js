@@ -264,6 +264,19 @@ function showCopyFeedback() {
   }, 2000);
 }
 
+function showEmailCopyFeedback() {
+  const copyBtn = document.getElementById('copyEmail');
+  const icon = copyBtn.querySelector('i');
+  
+  copyBtn.classList.add('copied');
+  icon.className = 'fa-solid fa-check'; // Change to checkmark
+  
+  setTimeout(() => {
+    copyBtn.classList.remove('copied');
+    icon.className = 'fa-solid fa-copy'; // Change back to copy icon
+  }, 2000);
+}
+
 // --- Keyboard Shortcuts ---
 function toggleMinimalMode() {
   const body = document.body;
@@ -490,7 +503,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  
+  // Support modal
+  const supportBtn = document.getElementById('supportBtn');
+  const supportOverlay = document.getElementById('supportOverlay');
+  const closeSupport = document.getElementById('closeSupport');
+  const copyEmailBtn = document.getElementById('copyEmail');
+
+  supportBtn.addEventListener('click', () => {
+    supportOverlay.classList.add('show');
+  });
+
+  closeSupport.addEventListener('click', () => {
+    supportOverlay.classList.remove('show');
+  });
+
+  // Close support modal when clicking outside
+  supportOverlay.addEventListener('click', (e) => {
+    if (e.target === supportOverlay) {
+      supportOverlay.classList.remove('show');
+    }
+  });
+
+  // Copy email functionality
+  copyEmailBtn.addEventListener('click', () => {
+    const email = 'samsnowsf@gmail.com';
+    
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(email).then(() => {
+        showEmailCopyFeedback();
+      }).catch(() => {
+        fallbackCopyTextToClipboard(email);
+      });
+    } else {
+      fallbackCopyTextToClipboard(email);
+    }
+  });
 
   // Copy quote button
   const copyQuoteBtn = document.getElementById('copyQuote');
