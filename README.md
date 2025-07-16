@@ -8,6 +8,14 @@
 ![GitHub stars](https://img.shields.io/github/stars/samsnow850/InspoTab)
 ![GitHub forks](https://img.shields.io/github/forks/samsnow850/InspoTab)
 
+<br>
+
+<!-- Download Button -->
+[![Download](https://img.shields.io/badge/Download-Chrome%20Web%20Store-4285F4?logo=googlechrome&logoColor=white&style=for-the-badge)](https://chromewebstore.google.com/detail/ckpplcfeemkpdkkaehicgkcfflmjlhbf?utm_source=item-share-cb)
+
+<!-- Website Button -->
+[![Website](https://img.shields.io/badge/Website-inspo.samuelesnow.co-00BCD4?style=for-the-badge)](https://inspo.samuelesnow.co)
+
 </div>
 
 A beautiful Chrome extension that transforms your new tab page into an inspiring experience with daily motivational quotes and stunning backgrounds.
